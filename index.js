@@ -67,7 +67,19 @@ const promptUser = () => {
 const generateREADME = ({ title, description, instructions, usage, test, contribution, license, username, github, email }) =>
 `# ${title}
 
-## ${description}
+## Table of Contents
+
+1. [Description](#Description)
+2. [Installation](#Installation)
+3. [Usage](#Usage)
+4. [Tests](#Tests)
+5. [Contributing](#Contributing)
+6. [License](#License)
+7. [Questions](#Questions)
+
+## Description
+
+${description}
 
 ## Installation
 
@@ -91,10 +103,12 @@ This application is covered under ${license}.
 
 ## Questions
 
-Github:
-[${username}](${github})
+Please email me if you have further questions: 
+(${email}).
 
-Please email me if you have further questions: (${email}).`
+Github:
+[${username}](${github})`
+
 ;
 
 // TODO: Create a function to write README file
