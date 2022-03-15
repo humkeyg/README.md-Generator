@@ -60,9 +60,20 @@ const promptUser = () => {
       },
     ]);
 };
+
+function renderLicenseBadge(license) {
+  if(license === "none"){
+    return "";
+
+  } else {
+    return `![Github License](https://img.shields.io/badge/license-${license}-green)`;
+  }
+}
   
 const generateREADME = ({ title, description, instructions, usage, test, contribution, license, username, github, email }) =>
-`# ${title}
+`# ${title} 
+
+${renderLicenseBadge(license)}
 
 ## Table of Contents
 
@@ -71,8 +82,7 @@ const generateREADME = ({ title, description, instructions, usage, test, contrib
 3. [Usage](#Usage)
 4. [Tests](#Tests)
 5. [Contributing](#Contributing)
-6. [License](#License)
-7. [Questions](#Questions)
+6. [Questions](#Questions)
 
 ## Description
 
@@ -94,10 +104,6 @@ ${test}
 
 ${contribution}
 
-## License
-
-This application is covered under ${license}.
-
 ## Questions
 
 Please email me if you have further questions: 
@@ -115,7 +121,7 @@ function writeToFile(fileName, data) {}
 function init() {
   promptUser()
     .then((answers) => fs.writeFileSync('README.md', generateREADME(answers)))
-    .then(() => console.log('Successfully wrote to README.md'))
+    .then(() => console.log('Successfully written to README.md'))
     .catch((err) => console.error(err));
 };
 
