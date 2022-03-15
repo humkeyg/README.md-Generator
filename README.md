@@ -25,7 +25,7 @@ Screenshots on how to use the application as well as instructions can go here.
 
 ## Tests
 
-If the developer has made tests for this application, they will go here with code examples.
+If the developer has made tests for this application, they will go here with code examples. If there are no tests, exclude this section.
 
 ## Contributing
 
